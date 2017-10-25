@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>SIMPLE APP 2</title>
+        <!--Importing all libs-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script>
+        $(document).on("mobileinit", function() {
+            $.mobile.toolbar.prototype.options.addBackBtn = true;
+        });
+    </script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+
+    .save-button{
+        background: #5cb85c;
+        text-shadow: 0 0 0; 
+        color: #ffffff;
+    }
+
+    </style>
+    <title>Hello</title>
+    <style type="text/css">
+body {
+    background: url(images.jpg);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+</style>
+    </head>
+
+
+    <body>
+        <!--Main page -->   
+        <div data-role="page" id="Homepage">
+            
+            <!--Header-->   
+            <div data-role="header" data-position="fixed" data-theme="a">
+                <h1>MY TODO LIST </h1>   
+            </div>
+
+            <!--Main Content -->    
+            <div data-role="main" class="ui-content">   
+
+                <!--This will be dynamicly populated by JavaScript-->
+                <ul id="note_List" data-role="listview" data-filter="true" data-filter-placeholder="Search Notes" data-inset="false">
+                    
+
+                </ul>
+                
+            </div>
+
+            <!--Fotter -->  
+            <!--To fix the footer we include "data-position" atribute -->   
+            <div data-role="footer" data-position="fixed" data-theme="a">
+                <!--To possition incons in buttons, add to 
+                    "navbar" data-iconpos="rigth" or leve it empty --> 
+                <div data-role="navbar" data-iconpos="top" >
+                    <!--ul - stands for unordered list ! -->    
+                    <ul>
+                        
+                        <li>
+                            <a href="#NotePage" class="ui-btn" data-icon="comment">NEW TODO</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+        <!--Note Page-->
+        <div data-role="page" id="NotePage">
+
+            <div data-role="header">
+                <h1> TODO Note</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <form id="form-Add">
+                    <label for="noteDescription">Description:</label>
+                    <input type="text" id="noteDescription" value=""> 
+
+                    <label for="note">Start writing your note here:</label>
+                    <textarea type="text" id="addNote"></textarea>
+
+                    <button id="submitNote" class="ui-btn">Save</button>
+
+                </form>
+            </div>
+
+         
+            
+        </div>  
+
+        <!--Edit Page-->
+        <div data-role="page" id="EditNotePage">
+
+            <div data-role="header">
+                <h1>EDIT TODO NOTE</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                
+                    <label for="noteDescriptionEdit">Description:</label>
+                    <input type="text" id="noteDescriptionEdit" value=""> 
+
+                    <label for="noteEdit">Start writing your note here:</label>
+                    <textarea type="text" id="noteEdit"></textarea>
+
+
+                    <CENTER><button id="submitEditNote" class="ui-btn ui-btn-inline">Save</button>
+                    <button id="deleteNote" class="ui-btn ui-btn-inline">Delete</button></CENTER>
+                    <HR>
+                
+            </div>
+
+         
+            
+        </div> 
+
+        
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
